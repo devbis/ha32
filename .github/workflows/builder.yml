@@ -4,6 +4,7 @@ name: Build images
 on:
   workflow_dispatch:
   repository_dispatch:
+  push:
   # release:
   #   types: ["published"]
   # schedule:
@@ -216,7 +217,8 @@ jobs:
 
       # home-assistant/builder doesn't support sha pinning
       - name: Build base image
-        uses: home-assistant/builder@2025.09.0
+        # uses: home-assistant/builder@2025.09.0
+        uses: home-assistant/builder@2026.02.1
         with:
           args: |
             $BUILD_ARGS \
